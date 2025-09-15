@@ -19,7 +19,10 @@ interface Options {
 const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
 axios.defaults.baseURL = "https://api.themoviedb.org/3/search/movie";
 
-export const fetchMovies = async (query: string, page: number) => {
+export const fetchMovies = async (
+  query: string,
+  page: number
+): Promise<MoviesTMDBResponse> => {
   const options: Options = {
     params: {
       query: query,
